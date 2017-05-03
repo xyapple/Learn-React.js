@@ -5,17 +5,38 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
+
     <!--Load React.js-->
     <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
     <!--Load Babel-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <!--Style-->
+    <style>
+        #container {
+            padding: 50px;
+            background-color: #FFF;
+        }
+    </style>
 
 </head>
 
 <body>
-
+    <div id="container"></div>
+    <script type="text/babel">
+        var Letter = React.createClass({ render: function() { return (
+        <div>
+            {this.props.children}
+        </div>
+        ); } }); ReactDOM.render(
+        <div>
+            <Letter>A</Letter>
+            <Letter>P</Letter>
+            <Letter>P</Letter>
+            <Letter>L</Letter>
+            <Letter>E</Letter>
+        </div>, document.querySelector("#container"));
+    </script>
 </body>
 
 </html>
