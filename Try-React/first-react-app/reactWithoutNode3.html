@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Simple Color Pallette Cards</title>
+    <title>Simple Color Palette Cards</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/style.css" rel="stylesheet">
@@ -24,19 +24,22 @@
     <div id="container"></div>
     <script type="text/babel">
 
-        var ColorCard = React.createClass({ render: function(){ var colorCardStyle= { height: 150, backgroundColor: "#FF6663" }; return (
+        var ColorCard = React.createClass({ render: function(props){ var colorCardStyle= { height: 150, backgroundColor: "#FF6663"   }; return (
         <div style={colorCardStyle}>
 
         </div>
-        ); } }); var CardLabel = React.createClass({ render: function(){ return(
-        <p>Nothing</p>
-        ); } }); var Card = React.createClass({ render: function(){ var cardStyle = { height: 200, width: 150, padding: 0, backgroundColor: "#FFF", WebkitFilter: "drop-shadow(0px 0px 5px #666)",  filter:"drop-shadow(0px 0px 5px #666)" }; return(
+        ); } }); var CardLabel = React.createClass({ render: function(props){ var labelStyle = { fontFamily: "sans-serif", fontWeight: "bold", padding:13, margin:0 }; return(
+
+        <p style={labelStyle}>#FF6663</p>  ); } }); var Card = React.createClass({ render: function(){ var cardStyle = { height: 200, width: 150, padding: 0, backgroundColor: "#FFF", WebkitFilter: "drop-shadow(0px 0px 5px #666)",  filter:"drop-shadow(0px 0px 5px #666)" };
+        return(
         <div style={cardStyle}>
-            <ColorCard/>
+            <ColorCard />
+            <CardLabel />
         </div>
         ); } }); ReactDOM.render(
         <div>
-            <Card/>
+
+            <Card />
 
         </div>, document.querySelector("#container") );
     </script>
