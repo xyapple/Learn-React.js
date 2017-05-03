@@ -18,14 +18,22 @@
 <body>
     <div id="container"></div>
     <script type="text/babel">
-        var Hello = React.createClass({ render:function(){ return (
+        var Hello = React.createClass({ render:function(props){ return (
 
-        <p>Hello Apple!</p>
+        <p>Hello, {this.props.greetTarget}!</p>
 
-        ); } }); ReactDOM.render(
+        ); } }); var Buttion = React.createClass({ render: function(){ return (
         <div>
-            <Hello/>
+            <button type={this.props.behavior}> {this.props.children}</button>
+        </div>); } }); ReactDOM.render(
+        <div>
+            <Hello greetTarget="Apple" />
+            <Hello greetTarget="Boo" />
+            <Hello greetTarget="Tree" />
+            <Hello greetTarget="Flower" />
+            <Buttion behavior="Submit">SEND</Buttion>
         </div>
+
         , document.querySelector("#container") );
 
     </script>
