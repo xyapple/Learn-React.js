@@ -24,17 +24,20 @@
     <div id="container"></div>
     <script type="text/babel">
 
-        var ColorCard = React.createClass({ render: function(){ return (
-        <p>Nothing</p>
+        var ColorCard = React.createClass({ render: function(){ var colorCardStyle= { height: 150, backgroundColor: "#FF6663" }; return (
+        <div style={colorCardStyle}>
+
+        </div>
         ); } }); var CardLabel = React.createClass({ render: function(){ return(
         <p>Nothing</p>
         ); } }); var Card = React.createClass({ render: function(){ var cardStyle = { height: 200, width: 150, padding: 0, backgroundColor: "#FFF", WebkitFilter: "drop-shadow(0px 0px 5px #666)",  filter:"drop-shadow(0px 0px 5px #666)" }; return(
         <div style={cardStyle}>
-
+            <ColorCard/>
         </div>
         ); } }); ReactDOM.render(
         <div>
             <Card/>
+
         </div>, document.querySelector("#container") );
     </script>
 </body>
