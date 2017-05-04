@@ -26,6 +26,9 @@ var Counter = React.createClass({
       strikes:0
     };
   },
+  componentDidMount: function(){
+    setInterval(this.timerTick,500);
+  },
   render: function(){
     return(
       <h1>{this.state.strikes}</h1>
