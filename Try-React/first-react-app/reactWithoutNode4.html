@@ -26,8 +26,13 @@ var Counter = React.createClass({
       strikes:0
     };
   },
+  timerTick:function(){
+    this.setState({
+      strikes:this.state.strikes + 100
+    });
+  },
   componentDidMount: function(){
-    setInterval(this.timerTick,500);
+    setInterval(this.timerTick,1000);
   },
   render: function(){
     return(
