@@ -35,14 +35,23 @@ var Counter = React.createClass({
     setInterval(this.timerTick,1000);
   },
   render: function(){
+    var counterStyle={
+      color:"#66FFFF",
+      fontSize:50
+    }
+    var count=this.state.strikes.toLocaleString();
     return(
-      <h1>{this.state.strikes}</h1>
+      <h1 style={counterStyle}>{count}</h1>
     );
   }
 });
 
 var CunterDisplay = React.createClass({
   render: function(){
+    var commonStyle={
+      margin:0,
+      padding:0
+    }
     var divStyle={
       width:250,
       textAlign:"Center",
@@ -52,7 +61,7 @@ var CunterDisplay = React.createClass({
       color:"#999",
       borderRadius:10
     };
-
+    
     return (
       <div style={divStyle}>
       <Counter/>
