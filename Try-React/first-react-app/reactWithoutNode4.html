@@ -17,6 +17,8 @@
     </style>
   </head>
   <body>
+<div id="container"></div>
+
 <script type="text/babel">
 var Counter = React.createClass({
   render: function(){
@@ -29,10 +31,27 @@ var Counter = React.createClass({
 var CunterDisplay = React.createClass({
   render: function(){
     var divStyle={
-      
-    }
+      width:250,
+      textAlign:"Center",
+      backgroundColor: "black",
+      padding: 40,
+      fontFamily:"sans-serif",
+      color:"#999",
+      borderRadius:10
+    };
+
+    return (
+      <div style={divStyle}>
+      <Counter/>
+      </div>
+    );
   }
-})
+});
+
+ReactDOM.render(
+  <CunterDisplay/>,
+  document.querySelector("#container")
+);
 
 </script>
   </body>
