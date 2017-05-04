@@ -61,7 +61,20 @@ var CunterDisplay = React.createClass({
       color:"#999",
       borderRadius:10
     };
-    
+    var textStyles ={
+      emphasis:{
+        fontSize: 38,
+        ...commonStyle
+      },
+      smallEmphasis:{
+        ...commonStyle
+      },
+      small:{
+        fontSize: 17,
+        opacity:0.5,
+        ...commonStyle
+      }
+    }
     return (
       <div style={divStyle}>
       <Counter/>
