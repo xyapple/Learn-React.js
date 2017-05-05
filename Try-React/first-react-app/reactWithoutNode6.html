@@ -62,7 +62,7 @@ var CounterBackground = React.createClass({
     return (
       <div style={backgroundStyle}>
         <Counter display={this.state.count}/>
-        <button style={buttonStyle}>+</button>
+        <button onClick={this.increase} style={buttonStyle}>+</button>
       </div>
     )
   }
