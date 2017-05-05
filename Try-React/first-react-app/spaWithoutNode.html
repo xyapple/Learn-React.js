@@ -55,6 +55,11 @@ ul.header li a{
 <div id="container"></div>
 <script type="text/babel">
 const displayDOM = document.querySelector("#container")
+var { Router,
+      Route,
+      IndexRoute,
+      IndexLink,
+      Link} = ReactRouter;
 
 var App = React.createClass({
   render: function(){
@@ -90,11 +95,11 @@ Excerpt From: Chinnathambi, Kirupa. “Learning React.” iBooks. </p>
 });
 
 ReactDOM.render(
-  <ReactRouter.Router history={ReactRouter.hashHistory}>
-<ReactRouter.Router path="/" component={App}>
+  <Router history={ReactRouter.hashHistory}>
+<Router path="/" component={App}>
 
-</ReactRouter.Router>
-  </ReactRouter.Router>,
+</Router>
+  </Router>,
   
   displayDOM
 );
