@@ -18,6 +18,14 @@
   </head>
   <body>
 <div id="container"></div>
+<button type="button" name="button">Non-React</button>
+<script type="text/javascript">
+function doSomething(e){
+  console.log(this);
+}
+var foo = document.querySelector("button")
+foo.addEventListener("click", doSomething, false);
+</script>
 <script type="text/babel">
 var Counter =React.createClass({
   render: function(){
@@ -51,6 +59,7 @@ var CounterBackground = React.createClass({
     };
   },
   increase: function(e){
+    console.log(this);
     var currentCount = this.state.count;
     if (e.shiftKey){
       currentCount +=10;
