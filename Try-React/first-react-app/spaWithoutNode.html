@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+
     <meta charset="utf-8">
     <title>First Single-Page app</title>
     <!--Load React.js-->
@@ -9,15 +11,13 @@
     <!--Load Babel-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
     <!--Load React Router -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-router/0.13.4/ReactRouter.js"></script>
+    <script src="https://npmcdn.com/react-router@3.0.2/umd/ReactRouter.min.js"></script>
+
   </head>
   <body>
 <div id="container"></div>
 <script type="text/babel">
 const displayDOM = document.querySelector("#container")
-
-var Router = ReactRouter;
-var Route = Router.Route;
 
 var App = React.createClass({
   render: function(){
@@ -53,11 +53,12 @@ Excerpt From: Chinnathambi, Kirupa. “Learning React.” iBooks. </p>
 });
 
 ReactDOM.render(
- <Route>                           
-      <Route path="/" component={App}> 
-                                                   
-      </Route>                         
-    </Route>,   
+  <ReactRouter.Router>
+<ReactRouter.Router path="/" component={App}>
+
+</ReactRouter.Router>
+  </ReactRouter.Router>,
+  
   displayDOM
 );
 
