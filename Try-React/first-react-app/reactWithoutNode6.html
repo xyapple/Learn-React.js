@@ -42,8 +42,14 @@ var CounterBackground = React.createClass({
     };
   },
   increase: function(e){
+    var currentCount = this.state.count;
+    if (e.shiftKey){
+      currentCount += 10;
+    } else {
+      currentCount += 1;
+    }
      this.setState({
-       count: this.state.count+1
+       count: currentCount
      });
   },
   render: function(){
@@ -67,7 +73,7 @@ var CounterBackground = React.createClass({
     return (
       <div style={backgroundStyle}>
         <Counter display={this.state.count}/>
-        <button onClick={this.increase} style={buttonStyle}>+</button>
+        <button onClick={this.increase}  onKeyPress={this.increase} style={buttonStyle}>+</button>
       </div>
     )
   }
