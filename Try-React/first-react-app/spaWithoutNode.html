@@ -2,15 +2,28 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>First Single-Page app</title>
     <!--Load React.js-->
     <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
     <!--Load Babel-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
     <!--Style-->
+    <style>
+
+    </style>
   </head>
   <body>
+<div id="container"></div>
+<script type="text/babel">
+var displayDOM = document.querySelector("#container")
+ReactDOM.render(
+  <div>
+<h1>Hello</h1>
+  </div>,
+  displayDOM
+);
 
+</script>
   </body>
 </html>
