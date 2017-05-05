@@ -41,6 +41,11 @@ var CounterBackground = React.createClass({
       count:0
     };
   },
+  increase: function(e){
+     this.setState({
+       count: this.state.count+1
+     });
+  },
   render: function(){
     var backgroundStyle={
       padding:50,
