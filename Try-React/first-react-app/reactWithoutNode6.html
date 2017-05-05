@@ -18,5 +18,36 @@
   </head>
   <body>
 <div id="container"></div>
+<script type="text/babel">
+var Counter =React.createClass({
+  render: function(){
+    var textStyle ={
+      fontSize:72,
+      fontFamily:"sans-serif",
+      color:"#333",
+      fontWeight:"bold"
+    };
+    return(
+      <div style={textStyle}>
+      {this.props.display}
+      </div>
+    );
+  }
+});
+
+var CounterBackground = React.createClass({
+  getInitialState: function(){
+    return{
+      count:0
+    };
+  },
+  render: function(){
+    var backgroundStyle={
+      padding:50,
+      backgroundColor:"#FFC53A"
+    }
+  }
+})
+</script>
   </body>
 </html>
