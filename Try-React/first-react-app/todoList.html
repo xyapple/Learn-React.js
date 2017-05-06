@@ -12,16 +12,71 @@
     <script src="https://npmcdn.com/react-router@3.0.2/umd/ReactRouter.min.js"></script>
     <!-- Style -->
     <style>
-
+body{
+  padding: 50px;
+  background-color: #66CCFF;
+  font-family: sans-serif;
+}
+.todoListM .header input{
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #FFF;
+}
+.todoListM .header button{
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px;
+  background-color: #0066FF;
+  color: #FFF;
+  border: 2px solid #FFF;
+}
+.todoListM .header button:hover{
+  background-color: #003399;
+  border: 2px solid #003399;
+  cursor: pointer;
+}
     </style>
   </head>
   <body>
 <div id="container"></div>
 <script type="text/babel">
 var displayDOM = document.querySelector("#container");
+var TodoList = React.createClass({
+  getInitialState: function(){
+    return{
+      items:[]
+    };
+  },
+  addItem:function(e){
+    var itemArray=this.state.items;
+    itemArray.push({
+      text:this._inputElement.value,
+      key:Date.now()
+    });
+    this.setState({
+      items: itemArray
+    });
+    this._inputElement.value="";
+    e.preventDefault();
+  },
+  render: function(){
+    return(
+      <div className="todoListM">
+      <div className="header">
+      <form onSubmit={this.addItem}>
+          <input
+              ref={(a)=>this._inputElement=a}
+          placeholder="enter task"/>
+          <button type="submit">Add</button>
+      </form>
+      </div>
+      </div>
+    );
+  }
+});
 ReactDOM.render(
   <div>
-  Hello!
+  <TodoList/>
   </div>,
   displayDOM
 )
