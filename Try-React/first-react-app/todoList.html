@@ -35,24 +35,45 @@ body{
   border: 2px solid #003399;
   cursor: pointer;
 }
+.todoListM .theList{
+  list-style: none;
+  padding-left: 0;
+  width: 255px;
+}
+.todoListM .theList li{
+  color: #333;
+  background-color: rgba(255,255,255,0.5);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
     </style>
   </head>
   <body>
 <div id="container"></div>
 <script type="text/babel">
 var displayDOM = document.querySelector("#container");
-var TodoItems = React.createClass({
-render:function(){
-  var todoEntries = this.props.entries;
 
-  function createTasks(item){
-    return <li key={item.key}>
-    {item.text}
-    </li>
-  };
-  var listItems=todoEntries.map(createTasks);
-}
+var TodoItems = React.createClass({
+
+    render:function(){
+      var todoEntries = this.props.entries;
+
+      function createTasks(item){
+        return <li key={item.key}>
+        {item.text}
+        </li>
+      };
+      var listItems=todoEntries.map(createTasks);
+
+      return(
+        <ul className="theList">
+        {listItems}
+        </ul>
+      );
+    }
 });
+
 var TodoList = React.createClass({
   getInitialState: function(){
     return{
