@@ -41,6 +41,18 @@ body{
 <div id="container"></div>
 <script type="text/babel">
 var displayDOM = document.querySelector("#container");
+var TodoItems = React.createClass({
+render:function(){
+  var todoEntries = this.props.entries;
+
+  function createTasks(item){
+    return <li key={item.key}>
+    {item.text}
+    </li>
+  };
+  var listItems=todoEntries.map(createTasks);
+}
+});
 var TodoList = React.createClass({
   getInitialState: function(){
     return{
@@ -49,6 +61,7 @@ var TodoList = React.createClass({
   },
   addItem:function(e){
     var itemArray=this.state.items;
+
     itemArray.push({
       text:this._inputElement.value,
       key:Date.now()
@@ -70,6 +83,7 @@ var TodoList = React.createClass({
           <button type="submit">Add</button>
       </form>
       </div>
+      <TodoItems entries={this.state.items}/>
       </div>
     );
   }
