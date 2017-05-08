@@ -1,6 +1,11 @@
 # Learn-React.js
+
 ## This Repository is 2017 summer project. I will learn React.js in the next 3 months.
-### First folder: Try-React is where I learn to setup a React locally by following react tutorial: https://facebook.github.io/react/tutorial/tutorial.html
-### Dealing with JSX
-* “Let your browser rely on a JavaScript library to automatically convert JSX to something it understands.”
---Excerpt From: Chinnathambi, Kirupa. “Learning React.” iBooks. 
+
+# Try-React:
+
+There is a great intro React book that I fount is easy to follow and understand. (Learning React by Kirupa Chinnathambi). There are some changes and updates which will be importance for the code to run. So please also check out author's websie: <https://www.kirupa.com/>.
+
+--------------------------------------------------------------------------------
+
+In the MyFirstApp, I had setup first react local env follow instructions from the books
