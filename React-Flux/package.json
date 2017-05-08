@@ -1,0 +1,11 @@
+{
+  "name": "reatadminexample",
+  "version": "1.0.0",
+  "description": "Basiced on pluralsight React-Flux course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yin Deascentis",
+  "license": "ISC"
+}
