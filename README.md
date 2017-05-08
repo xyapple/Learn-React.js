@@ -8,7 +8,7 @@ There is a great intro React book that I fount is easy to follow and understand.
 
 --------------------------------------------------------------------------------
 
-```mermaid
+```
 graph TD;
 A[Try-React] --> B[first-react-app];
 A --> C[MyFirstApp];
