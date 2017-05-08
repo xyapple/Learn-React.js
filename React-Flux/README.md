@@ -1,3 +1,10 @@
-Reference: Building Applications with React and Flux by Cory House
+Reference: Building Applications with React and Flux by Cory House.
 
-Watch and Learn from pluralsight.com
+Use packages:
+
+- Node.js (Server-side JavaScript)
+- Browserify (Node in browser)
+- React.js (Components)
+- React/Router(Routing)
+- Flux (Unidirectional data flows)
+- Gulp (Task runner)
