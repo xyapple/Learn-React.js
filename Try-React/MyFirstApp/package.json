@@ -1,11 +1,16 @@
 {
-	"name": "myfirstapp",
-	"version": "1.0.0",
-	"description": "This is my first ReactJS app which run by node.js",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"author": "Yin Deascentis",
-	"license": "MIT"
+  "name": "myfirstapp",
+  "version": "1.0.0",
+  "description": "This is my first ReactJS app which run by node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yin Deascentis",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "webpack": "^2.5.1"
+  }
 }
