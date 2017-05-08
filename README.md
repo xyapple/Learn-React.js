@@ -8,4 +8,12 @@ There is a great intro React book that I fount is easy to follow and understand.
 
 --------------------------------------------------------------------------------
 
-In the MyFirstApp, I had setup first react local env follow instructions from the books
+```mermaid
+graph TD;
+A[Try-React] --> B[first-react-app];
+A --> C[MyFirstApp];
+```
+
+- #### In the first-react-app, I tried to followed the: <https://facebook.github.io/react/tutorial/tutorial.html>. And also created a few react apps without Node.js evn.
+
+- #### In the MyFirstApp, I had setup first react local env follow instructions from the books.
