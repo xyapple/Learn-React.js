@@ -11,5 +11,11 @@ var config = {
     filename: "myCode.js"
   }
 };
+module:{
+  loaders:[{
+    include: DEV,
+    loader: "babel-loader",
+  }]
+}
 
 module.exports = config;
