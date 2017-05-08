@@ -4,4 +4,4 @@
 
 ### Run: ./node_modules/.bin/webpack
 
-It works find.
+It works fine.
