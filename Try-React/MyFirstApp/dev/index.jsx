@@ -1,19 +1,41 @@
+// import React from "react";
+// import ReactDOM from "react-dom";
+//
+// var HelloWorld = React.createClass({
+//   render: function(){
+//     return (
+//         <h1>Hello, {this.props.greetTarget}!</h1>
+//     );
+//   }
+// })
+//
+// ReactDOM.render(
+//   <div>
+//     <HelloWorld greetTarget="Apple"/>
+//     <HelloWorld greetTarget="Pear"/>
+//     <HelloWorld greetTarget="Pineapple"/>
+//   </div>,
+//   document.querySelector("#container")
+// );
 import React from "react";
 import ReactDOM from "react-dom";
 
 var HelloWorld = React.createClass({
-  render: function(){
+  render: function() {
     return (
-        <h1>Hello, {this.props.getGreeting}!</h1>
+      <p>Hello, {this.props.greetTarget}!</p>
     );
   }
-})
+});
 
 ReactDOM.render(
   <div>
-    <HelloWorld getGreeting="Apple"/>
-    <HelloWorld getGreeting="Pear"/>
-    <HelloWorld getGreeting="Pineapple"/>
+    <HelloWorld greetTarget="Batman"/>
+    <HelloWorld greetTarget="Iron Man"/>
+    <HelloWorld greetTarget="Nicolas Cage"/>
+    <HelloWorld greetTarget="Mega Man"/>
+    <HelloWorld greetTarget="Bono"/>
+    <HelloWorld greetTarget="Catwoman"/>
   </div>,
   document.querySelector("#container")
-)
+); 
