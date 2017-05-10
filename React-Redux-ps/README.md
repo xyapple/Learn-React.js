@@ -11,3 +11,5 @@ Dev Environment
 - All in One (Webpack!)
 - Routing (REACT/ROUTER)
 - Hot Reloading (babel-preset-react-hmre)
+
+To run the app, in the terminal: $npm start -s
