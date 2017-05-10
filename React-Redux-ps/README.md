@@ -12,4 +12,4 @@ Dev Environment
 - Routing (REACT/ROUTER)
 - Hot Reloading (babel-preset-react-hmre)
 
-To run the app, in the terminal: $npm start -s
+-{Babel; Webpack; ESLint; Mocha; Express; npm Scripts} To run the app, in the terminal: $npm start -s
