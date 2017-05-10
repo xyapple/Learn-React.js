@@ -1,6 +1,6 @@
 Coding along with Coryhouse-pluralsight-redux-starter Link: <https://github.com/coryhouse/pluralsight-redux-starter>
 
-Dev Enviornment
+Dev Environment
 
 - Automated Testing (Mocha)
 - Linting(ESlint)
