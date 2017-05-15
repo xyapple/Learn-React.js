@@ -6,7 +6,7 @@ class AboutPage {
         <h1>About</h1>
       <p>This application uses React-Redux, React-Router </p>
       </div>
-    )
+    );
 
   }
 }
