@@ -1,12 +1,13 @@
 import React, {PropTypes} from 'react';
-import {Link, IndexLink } from 'react-router';
+import { Link, IndexLink } from 'react-router';
 
 const Header = ()=>{
   return (
     <nav>
-      <Indexlink to="/" activeClassName="active">Home</Indexlink>
+      <IndexLink to="/" activeClassName="active">Home</IndexLink>
         {" | "}
       <Link to="/about" activeClassName="active">About</Link>
     </nav>
-  )
+  );
 }
+export default Header;
