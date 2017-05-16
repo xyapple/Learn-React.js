@@ -43,6 +43,11 @@ courseRow(course, index){
   }
 }
 
+CoursePage.propTypes = {
+  course: PropTypes.array.isRequired,
+  dispatch: PropTypes.func.isRequired
+};
+
 function mapStateToProps(state, ownProps){
   return{
     course: state.courses
