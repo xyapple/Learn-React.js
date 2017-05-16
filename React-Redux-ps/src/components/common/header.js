@@ -11,5 +11,5 @@ const Header = ()=>{
       <Link to="/course" activeClassName="active">Courses</Link>
     </nav>
   );
-}
+};
 export default Header;

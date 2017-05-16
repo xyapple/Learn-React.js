@@ -1,4 +1,6 @@
 import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
+
 
 class CoursePage extends React.Component {
   constructor(props, context){
@@ -36,4 +38,4 @@ onClickSave(event){
   }
 }
 
-export default CoursePage;
+export default connect(mapStateToProps, mapDispatchToProps) (CoursePage);
