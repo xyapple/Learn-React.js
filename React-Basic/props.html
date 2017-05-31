@@ -41,7 +41,11 @@
       });
 
       var Submessagebox = React.createClass({
-
+        getDefaultProps: function(){
+          return{
+            message: ['Default message']
+          }
+        },
         render: function(){
           var msgs = [];
           this.props.message.forEach(function(msg, index){
