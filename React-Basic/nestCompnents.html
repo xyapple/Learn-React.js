@@ -19,13 +19,13 @@
           var buttonbox = [];
           for(var i =0; i <3; i++){
             buttonbox.push(
-              <Buttonbox/>
+              <Buttonbox key={"sub"+i}/>
             )
           }
           return (
             <div>
               <h1>Hello React!!</h1>
-              // <Buttonbox/>
+              
             {buttonbox}
               <Footer/>
             </div>
