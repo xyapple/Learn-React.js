@@ -13,8 +13,14 @@
 <div id='app'>
   <script type="text/babel">
   var Messagebox = React.createClass({
+    alertbox: function(){
+      alert("Hello, one click! ")
+    },
     render: function(){
-      return (<h1>Hello React!!</h1>)
+      return (
+        
+        <h1 onClick={this.alertbox}>Hello React!!</h1>
+      )
     }
   });
 
