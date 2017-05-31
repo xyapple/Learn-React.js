@@ -16,10 +16,18 @@
       <script type="text/babel">
       var Messagebox = React.createClass({
         render: function(){
+          var buttonbox = [];
+          for(var i =0; i <3; i++){
+            buttonbox.push(
+              <Buttonbox/>
+            )
+          }
           return (
             <div>
               <h1>Hello React!!</h1>
-              <Buttonbox/>
+              // <Buttonbox/>
+            {buttonbox}
+              <Footer/>
             </div>
 
           )
