@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Nest Components</title>
+    <!--Load React.js-->
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <!--Load Babel-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+  </head>
+
+  <body>
+    <div id='app'></div>
+      <script type="text/babel">
+      var Messagebox = React.createClass({
+        render: function(){
+          return (
+            <div>
+              <h1>Hello React!!</h1>
+              <Buttonbox/>
+            </div>
+
+          )
+        }
+      });
+
+      var Buttonbox = React.createClass({
+        alertme: function(){
+          alert("Hello, Please enjoy React-basic! ")
+        },
+        render: function(){
+          return (
+            <div>
+            <button onClick={this.alertme}>Click me</button>
+            <Submessagebox/>
+            </div>
+          )
+        }
+      });
+
+      var Submessagebox = React.createClass({
+        render: function(){
+          return (
+            <h6>Hello, here is a submessage which will be nested inside the Button</h6>
+          )
+        }
+      })
+
+      var Footer = React.createClass({
+        render: function(){
+          return(
+            <footer>This is the footer</footer>
+          )
+        }
+
+      });
+
+      ReactDOM.render(<Messagebox/>,
+          document.getElementById('app'),
+          function () {
+            console.log("Let's nest.");
+          }
+      )
+    </script>
+  </body>
+</html>
