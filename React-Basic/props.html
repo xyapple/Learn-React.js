@@ -40,6 +40,24 @@
         }
       });
 
+      var Submessagebox = React.createClass({
+
+        render: function(){
+          var msgs = [];
+          this.props.message.forEach(function(msg, index){
+            msgs.push(
+              <p>Hi, {msg}</p>
+            )
+          });
+          return (
+            <div>
+            <h6>Hello, here is a submessage which will be nested.</h6>
+            {msgs}
+            </div>
+
+          )
+        }
+      })
       var Buttonbox = React.createClass({
         alertme: function(){
           alert("Hello, Please enjoy React-basic! ")
@@ -52,25 +70,6 @@
           )
         }
       });
-
-      var Submessagebox = React.createClass({
-        var msgs = [];
-        this.props.message.forEach(function(msg, index){
-          msgs.push(
-            <p>{msg}</p>
-          )
-        })
-        render: function(){
-          return (
-            <div>
-            <h6>Hello, here is a submessage which will be nested.</h6>
-            {msgs}
-            </div>
-
-          )
-        }
-      })
-
       var Footer = React.createClass({
         render: function(){
           return(
