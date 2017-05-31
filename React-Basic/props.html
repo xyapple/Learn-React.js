@@ -41,6 +41,9 @@
       });
 
       var Submessagebox = React.createClass({
+        propTypes:{
+          message: React.PropTypes.array.isRequired,
+        },
         getDefaultProps: function(){
           return{
             message: ['Default message']
