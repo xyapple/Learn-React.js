@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Nest Components</title>
+    <!--Load React.js-->
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <!--Load Babel-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+  </head>
+
+  <body>
+    <div id='app'></div>
+      <script type="text/babel">
+     var BasicForm = React.createClass({
+       getInitialState: function(){
+         return{
+           inputValue: 'Please input defaultValue',
+           selectValue: 'A',
+           radioValue: 'B',
+           textValue: 'please enter some text....'
+         }
+       },
+
+         render: function(){
+           return (
+             <div>
+             <h2>Please Click Buttons</h2>
+              <from>
+              <input type='text' defaultValue='Default Value'/>
+              <br/>
+              <select>
+                  <option defaultValue='A'>A</option>
+                  <option defaultValue="B">B</option>
+                  <option defaultValue="C">C</option>
+                  <option defaultValue="D">D</option>
+                  <option defaultValue="E">E</option>
+              </select>
+              <br/>
+              <p>Raido Buttons</p>
+              <input type='radio' name="radioButton" defaultChecked defaultValue="A"/>
+              <input type='radio' name="radioButton" defaultValue="B"/>
+              <input type='radio' name="radioButton" defaultValue="C"/>
+              <br/>
+              <p>Checkbox</p>
+              <input type='checkbox' name="radioButton" defaultValue="A"/>
+              <input type='checkbox' name="radioButton" defaultValue="B"/>
+              <input type='checkbox' name="radioButton" defaultChecked defaultValue="C"/>
+              <br/>
+              <textarea defaultValue="please enter some text...."></textarea>
+              </from>
+             </div>
+           )
+         }
+
+     });
+
+      var ClickComponents = ReactDOM.render(<BasicForm/>,
+          document.getElementById('app'),
+          function () {
+            console.log("Let's state.");
+          }
+      )
+    </script>
+  </body>
+</html>
