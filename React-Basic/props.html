@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Nest Components</title>
+    <!--Load React.js-->
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <!--Load Babel-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+  </head>
+
+  <body>
+    <div id='app'></div>
+      <script type="text/babel">
+      var Messagebox = React.createClass({
+      getInitialState:function(){
+        return{
+          isVisible: true,
+          titleMessage: 'Hello World! message from React state...',
+          submessage: [
+            'message from content A',
+            'message from content B',
+            'message from content C',
+          ]
+        }
+      },
+        render: function(){
+
+          return (
+            <div>
+              <h1>{this.state.titleMessage}</h1>
+              <Submessagebox message={this.state.submessage}/>
+              <Buttonbox/>
+              <Footer/>
+            </div>
+
+          )
+        }
+      });
+
+      var Buttonbox = React.createClass({
+        alertme: function(){
+          alert("Hello, Please enjoy React-basic! ")
+        },
+        render: function(){
+          return (
+
+            <button onClick={this.alertme}>Click me</button>
+
+          )
+        }
+      });
+
+      var Submessagebox = React.createClass({
+        var msgs = [];
+        this.props.message.forEach(function(msg, index){
+          msgs.push(
+            <p>{msg}</p>
+          )
+        })
+        render: function(){
+          return (
+            <div>
+            <h6>Hello, here is a submessage which will be nested.</h6>
+            {msgs}
+            </div>
+
+          )
+        }
+      })
+
+      var Footer = React.createClass({
+        render: function(){
+          return(
+            <footer>This is the footer</footer>
+          )
+        }
+
+      });
+
+      ReactDOM.render(<Messagebox/>,
+          document.getElementById('app'),
+          function () {
+            console.log("Let's nest.");
+          }
+      )
+    </script>
+  </body>
+</html>
