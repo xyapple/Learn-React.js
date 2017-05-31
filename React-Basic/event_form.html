@@ -23,12 +23,16 @@
            textValue: 'please enter some text....'
          }
        },
-
+        handleSubmit: function(e){
+              e.preventDefault();
+              console.log('form submitting...');
+              console.log(e);
+        },
          render: function(){
            return (
              <div>
              <h2>Please Click Buttons</h2>
-              <from>
+              <from onSubmit={this.handleSubmit}>
               <input type='text' defaultValue='Default Value'/>
               <br/>
               <select>
@@ -50,6 +54,8 @@
               <input type='checkbox' name="radioButton" defaultChecked defaultValue="C"/>
               <br/>
               <textarea defaultValue="please enter some text...."></textarea>
+              <br/>
+              <button type="submit"> Submit </button>
               </from>
              </div>
            )
@@ -57,7 +63,8 @@
 
      });
 
-      var ClickComponents = ReactDOM.render(<BasicForm/>,
+      var formApp = ReactDOM.render(
+        <BasicForm/>,
           document.getElementById('app'),
           function () {
             console.log("Let's state.");
