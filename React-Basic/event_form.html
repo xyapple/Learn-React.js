@@ -20,19 +20,20 @@
            inputValue: 'Please input defaultValue',
            selectValue: 'A',
            radioValue: 'B',
+           checkValues:'C',
            textValue: 'please enter some text....'
          }
        },
-      //  handleInput: function(e){
-      //    this.setState({
-      //      inputValue: e.target.value
-      //    })
-      //  },
-      //  handleSelect: function(e){
-      //    this.setState({
-      //      selectValue: e.target.value
-      //    })
-      //  },
+        handleRadio:function(e){
+          this.setState({
+            radioValue: e.target.value,
+          })
+        },
+        handleCheckBox: function(e){
+          this.setState({
+            checkValues: e.target.value
+          })
+        },
         handleSubmit: function(e){
               e.preventDefault();
               console.log('form submitting...');
@@ -62,14 +63,14 @@
               </select>
               <br/>
               <p>Raido Buttons</p>
-              <input type='radio' name="radioButton" defaultChecked value="A"/>
-              <input type='radio' name="radioButton" value="B"/>
-              <input type='radio' name="radioButton" value="C"/>
+              <input onChange={this.handleRadio} type='radio' name="radioButton" defaultChecked value="A"/>
+              <input onChange={this.handleRadio} type='radio' name="radioButton" value="B"/>
+              <input onChange={this.handleRadio} type='radio' name="radioButton" value="C"/>
               <br/>
               <p>Checkbox</p>
-              <input type='checkbox' name="radioButton" value="A"/>
-              <input type='checkbox' name="radioButton" value="B"/>
-              <input type='checkbox' name="radioButton" defaultChecked value="C"/>
+              <input onChange={this.handleCheckBox} type='checkbox' name="radioButton" value="A"/>
+              <input onChange={this.handleCheckBox} type='checkbox' name="radioButton" value="B"/>
+              <input onChange={this.handleCheckBox} type='checkbox' name="radioButton" defaultChecked value="C"/>
               <br/>
               <textarea ref="pointerToTextarea" defaultValue={this.state.textValue}></textarea>
               <br/>
