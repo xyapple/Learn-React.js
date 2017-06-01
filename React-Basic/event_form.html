@@ -26,37 +26,38 @@
         handleSubmit: function(e){
               e.preventDefault();
               console.log('form submitting...');
-              console.log(e);
+              console.log(e)
+
         },
          render: function(){
            return (
              <div>
              <h2>Please Click Buttons</h2>
-              <from onSubmit={this.handleSubmit}>
+              <form onSubmit={this.handleSubmit}>
               <input type='text' defaultValue='Default Value'/>
               <br/>
-              <select>
-                  <option defaultValue='A'>A</option>
-                  <option defaultValue="B">B</option>
-                  <option defaultValue="C">C</option>
-                  <option defaultValue="D">D</option>
-                  <option defaultValue="E">E</option>
+              <select defaultValue='A'>
+                  <option value='A'>A</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                  <option value="D">D</option>
+                  <option value="E">E</option>
               </select>
               <br/>
               <p>Raido Buttons</p>
-              <input type='radio' name="radioButton" defaultChecked defaultValue="A"/>
-              <input type='radio' name="radioButton" defaultValue="B"/>
-              <input type='radio' name="radioButton" defaultValue="C"/>
+              <input type='radio' name="radioButton" defaultChecked value="A"/>
+              <input type='radio' name="radioButton" value="B"/>
+              <input type='radio' name="radioButton" value="C"/>
               <br/>
               <p>Checkbox</p>
-              <input type='checkbox' name="radioButton" defaultValue="A"/>
-              <input type='checkbox' name="radioButton" defaultValue="B"/>
-              <input type='checkbox' name="radioButton" defaultChecked defaultValue="C"/>
+              <input type='checkbox' name="radioButton" value="A"/>
+              <input type='checkbox' name="radioButton" value="B"/>
+              <input type='checkbox' name="radioButton" defaultChecked value="C"/>
               <br/>
               <textarea defaultValue="please enter some text...."></textarea>
               <br/>
               <button type="submit"> Submit </button>
-              </from>
+              </form>
              </div>
            )
          }
@@ -65,10 +66,8 @@
 
       var formApp = ReactDOM.render(
         <BasicForm/>,
-          document.getElementById('app'),
-          function () {
-            console.log("Let's state.");
-          }
+          document.getElementById('app')
+
       )
     </script>
   </body>
