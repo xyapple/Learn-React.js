@@ -54,6 +54,7 @@
                 check: this.state.checkValues,
               }
               console.log(formData);
+              this.refs.goodRadio.saySomething();
 
         },
          render: function(){
@@ -88,7 +89,7 @@
      });
      var RadioButtons = React.createClass({
        saySomething:function(){
-         alert("yo what's up man!");
+         alert("You had sumbit a form");
        },
        render:function(){
          return (
