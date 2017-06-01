@@ -34,9 +34,9 @@
              <div>
              <h2>Please Click Buttons</h2>
               <form onSubmit={this.handleSubmit}>
-              <input type='text' defaultValue='Default Value'/>
+              <input type='text' value={this.state.inputValue}/>
               <br/>
-              <select defaultValue='A'>
+              <select value={this.state.selectValue}>
                   <option value='A'>A</option>
                   <option value="B">B</option>
                   <option value="C">C</option>
@@ -54,7 +54,7 @@
               <input type='checkbox' name="radioButton" value="B"/>
               <input type='checkbox' name="radioButton" defaultChecked value="C"/>
               <br/>
-              <textarea defaultValue="please enter some text...."></textarea>
+              <textarea value={this.state.textValue}></textarea>
               <br/>
               <button type="submit"> Submit </button>
               </form>
