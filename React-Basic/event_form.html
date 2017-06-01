@@ -20,7 +20,6 @@
            inputValue: 'Please input defaultValue',
            selectValue: 'A',
            radioValue: 'B',
-           checkValues:'C',
            textValue: 'please enter some text....'
          }
        },
@@ -30,8 +29,16 @@
           })
         },
         handleCheckBox: function(e){
+          var checkValues = this.state.checkValues.ReatDOM.slice();
+          var newVal = e.target.value;
+          var index = checkValues.indexOf(newVal);
+          if( index == -1 ){
+            checkValues.push( newVal )
+          }else{
+            checkValues.splice(index,1);
+          }
           this.setState({
-            checkValues: e.target.value
+            checkValues: checkValues,
           })
         },
         handleSubmit: function(e){
@@ -43,6 +50,8 @@
                 input: ReactDOM.findDOMNode(this.refs["pointerToInput"]).value,
                 select:ReactDOM.findDOMNode(this.refs["pointerToSelect"]).value,
                 textarea: ReactDOM.findDOMNode(this.refs["pointerToTextarea"]).value,
+                radio: this.state.radioValue,
+                check: this.state.checkValues,
               }
               console.log(formData);
 
@@ -63,14 +72,10 @@
               </select>
               <br/>
               <p>Raido Buttons</p>
-              <input onChange={this.handleRadio} type='radio' name="radioButton" defaultChecked value="A"/>
-              <input onChange={this.handleRadio} type='radio' name="radioButton" value="B"/>
-              <input onChange={this.handleRadio} type='radio' name="radioButton" value="C"/>
+              <RadioButtons ref="goodRadio" handleRadio={this.handleRadio} />
               <br/>
               <p>Checkbox</p>
-              <input onChange={this.handleCheckBox} type='checkbox' name="radioButton" value="A"/>
-              <input onChange={this.handleCheckBox} type='checkbox' name="radioButton" value="B"/>
-              <input onChange={this.handleCheckBox} type='checkbox' name="radioButton" defaultChecked value="C"/>
+              <Checkboxes handleCheck={this.handleCheck} />
               <br/>
               <textarea ref="pointerToTextarea" defaultValue={this.state.textValue}></textarea>
               <br/>
@@ -81,6 +86,38 @@
          }
 
      });
+     var RadioButtons = React.createClass({
+       saySomething:function(){
+         alert("yo what's up man!");
+       },
+       render:function(){
+         return (
+           <span>
+             A
+             <input onChange={this.props.handleRadio} name="goodRadio" type="radio" value="A"/>
+             B
+             <input onChange={this.props.handleRadio} name="goodRadio" type="radio" defaultChecked value="B"/>
+             C
+             <input onChange={this.props.handleRadio} name="goodRadio" type="radio" value="C"/>
+           </span>
+         )
+       }
+     });
+
+     var Checkboxes = React.createClass({
+ 			render: function(){
+ 				return (
+ 					<span>
+ 						A
+ 						<input onChange={this.props.handleCheck}  name="goodCheckbox" type="checkbox" value="A"/>
+ 						B
+ 						<input onChange={this.props.handleCheck} name="goodCheckbox" type="checkbox" value="B" />
+ 						C
+ 						<input onChange={this.props.handleCheck} name="goodCheckbox" type="checkbox" value="C" />
+ 					</span>
+ 				)
+ 			}
+ 		});
 
       var formApp = ReactDOM.render(
         <BasicForm/>,
