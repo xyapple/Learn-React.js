@@ -37,10 +37,13 @@
               e.preventDefault();
               console.log('form submitting...');
               console.log(e);
-              console.log(ReactDOM.findDOMNode(this.refs["pointerToInput"]).value);
+
               var formData = {
-                input: this.refs,
+                input: ReactDOM.findDOMNode(this.refs["pointerToInput"]).value,
+                select:ReactDOM.findDOMNode(this.refs["pointerToSelect"]).value,
+                textarea: ReactDOM.findDOMNode(this.refs["pointerToTextarea"]).value,
               }
+              console.log(formData);
 
         },
          render: function(){
