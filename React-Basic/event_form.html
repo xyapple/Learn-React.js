@@ -23,21 +23,24 @@
            textValue: 'please enter some text....'
          }
        },
-       handleInput: function(e){
-         this.setState({
-           inputValue: e.target.value
-         })
-       },
-       handleSelect: function(e){
-         this.setState({
-           selectValue: e.target.value
-         })
-       },
+      //  handleInput: function(e){
+      //    this.setState({
+      //      inputValue: e.target.value
+      //    })
+      //  },
+      //  handleSelect: function(e){
+      //    this.setState({
+      //      selectValue: e.target.value
+      //    })
+      //  },
         handleSubmit: function(e){
               e.preventDefault();
               console.log('form submitting...');
               console.log(e);
-              console.log(ReactDOM.findDOMNode(this.refs["pointer"]).value);
+              console.log(ReactDOM.findDOMNode(this.refs["pointerToInput"]).value);
+              var formData = {
+                input: this.refs,
+              }
 
         },
          render: function(){
@@ -45,9 +48,9 @@
              <div>
              <h2>Please Click Buttons</h2>
               <form onSubmit={this.handleSubmit}>
-              <input type='text' value={this.state.inputValue} onChange={this.handleInput}/>
+              <input type='text' ref="pointerToInput" defaultValue={this.state.inputValue} />
               <br/>
-              <select value={this.state.selectValue} onChange={this.handleSelect}>
+              <select defaultValue={this.state.selectValue} ref="pointerToSelect">
                   <option value='A'>A</option>
                   <option value="B">B</option>
                   <option value="C">C</option>
@@ -65,7 +68,7 @@
               <input type='checkbox' name="radioButton" value="B"/>
               <input type='checkbox' name="radioButton" defaultChecked value="C"/>
               <br/>
-              <textarea ref="pointer" defaultValue={this.state.textValue}></textarea>
+              <textarea ref="pointerToTextarea" defaultValue={this.state.textValue}></textarea>
               <br/>
               <button type="submit"> Submit </button>
               </form>
