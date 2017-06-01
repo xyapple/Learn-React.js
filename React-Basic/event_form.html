@@ -36,7 +36,8 @@
         handleSubmit: function(e){
               e.preventDefault();
               console.log('form submitting...');
-              console.log(e)
+              console.log(e);
+              console.log(ReactDOM.findDOMNode(this.refs["pointer"]).value);
 
         },
          render: function(){
@@ -64,7 +65,7 @@
               <input type='checkbox' name="radioButton" value="B"/>
               <input type='checkbox' name="radioButton" defaultChecked value="C"/>
               <br/>
-              <textarea value={this.state.textValue}></textarea>
+              <textarea ref="pointer" defaultValue={this.state.textValue}></textarea>
               <br/>
               <button type="submit"> Submit </button>
               </form>
