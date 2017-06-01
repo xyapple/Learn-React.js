@@ -23,6 +23,16 @@
            textValue: 'please enter some text....'
          }
        },
+       handleInput: function(e){
+         this.setState({
+           inputValue: e.target.value
+         })
+       },
+       handleSelect: function(e){
+         this.setState({
+           selectValue: e.target.value
+         })
+       },
         handleSubmit: function(e){
               e.preventDefault();
               console.log('form submitting...');
@@ -34,9 +44,9 @@
              <div>
              <h2>Please Click Buttons</h2>
               <form onSubmit={this.handleSubmit}>
-              <input type='text' value={this.state.inputValue}/>
+              <input type='text' value={this.state.inputValue} onChange={this.handleInput}/>
               <br/>
-              <select value={this.state.selectValue}>
+              <select value={this.state.selectValue} onChange={this.handleSelect}>
                   <option value='A'>A</option>
                   <option value="B">B</option>
                   <option value="C">C</option>
